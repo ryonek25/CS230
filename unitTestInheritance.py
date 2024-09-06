@@ -1,4 +1,3 @@
-# Authors: Kai Francis, Ryan Yonek
 # Date: 8/28/24
 # Unit Testing for Inheritance Class Method
 
@@ -31,6 +30,12 @@ class Basketball(Sport):
     def get_court_size(self):
         return "94 feet long, 50 feet wide" #NBA court size
 
+    def get_ball_type(self):
+        return "Size 7, leather"
+
+    def get_number_of_referees(self):
+        return 3  # standard number of referees in an NBA game
+
 
 class TestBasketball(unittest.TestCase):
 
@@ -49,11 +54,15 @@ class TestBasketball(unittest.TestCase):
     def test_get_court_size(self):
         game = Basketball("Basketball", 5)
         self.assertEqual(game.get_court_size(), "94 feet long, 50 feet wide")
+
+    def test_get_ball_type(self):
+        game = Basketball("Basketball", 5)
+        self.assertEqual(game.get_ball_type(), "Size 7, leather")
+
+    def test_get_number_of_referees(self):
+        game = Basketball("Basketball", 5)
+        self.assertEqual(game.get_number_of_referees(), 3)
     
     
 if __name__ == "__main__":
     unittest.main()
-
-
-
-        
